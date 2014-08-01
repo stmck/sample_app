@@ -3,6 +3,7 @@ class SessionsController < ApplicationController
   end
 
   def create
+<<<<<<< HEAD
     # form_for version
     # user = User.find_by(email: params[:session][:email].downcase)
     # if user && user.authenticate(params[:session][:password])
@@ -23,3 +24,10 @@ class SessionsController < ApplicationController
     redirect_to root_url
   end
 end
+=======
+  end
+
+  def destroy
+  end
+end
+>>>>>>> sign-in-out
