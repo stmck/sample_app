@@ -41,7 +41,7 @@ describe "Static pages" do
 
     it_should_behave_like "all static pages"
   end
-end
+
 
 it "should have the right links on the layout" do
     visit root_path
@@ -61,4 +61,4 @@ it "should have the right links on the layout" do
 it "should respond to 'name'" do
   expect(@user).to respond_to(:name)
 end
-
+end
