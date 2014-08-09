@@ -8,6 +8,7 @@ describe "Authentication" do
 
     it { should have_content('Sign in') }
     it { should have_title('Sign in') }
+    
     it { should_not have_link('Profile') }
     it { should_not have_link('Settings') }
   end
@@ -19,8 +20,10 @@ describe "Authentication" do
       before { click_button "Sign in" }
 
       it { should have_title('Sign in') }
+
       it { should_not have_link('Profile') }
       it { should_not have_link('Settings') }
+      
       it { should have_error_message('Invalid') }
 
       describe "after visiting another page" do
@@ -31,7 +34,9 @@ describe "Authentication" do
 
     describe "with valid information" do
       let(:user) { FactoryGirl.create(:user) }
-       before { sign_in user }
+      before do
+        sign_in user
+      end
 
       it { should have_title(user.name) }
       it { should have_link('Users',       href: users_path) }
